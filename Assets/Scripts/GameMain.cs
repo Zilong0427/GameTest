@@ -33,7 +33,7 @@ public class GameMain : MonoBehaviour {
 		temp.GetComponent<EnsContrrol> ().force = r_Force;
 		yield return new WaitForSeconds (t);
 
-		r_Time = Random.Range (3, 5);
+		r_Time = Random.Range (1, 3);
 		canIns = true;
 
 	}

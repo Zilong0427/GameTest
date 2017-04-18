@@ -6,7 +6,7 @@ public class EnsContrrol : MonoBehaviour {
 	public GameEnum.Type_Color ColorType;
 	public GameObject Target;
 	public float force;
-
+	public GameObject BrokeEffect;
 	Vector2 Dir;
 	Rigidbody2D m_Rigidbody2D;
 	// Use this for initialization
@@ -24,6 +24,8 @@ public class EnsContrrol : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) 
 	{
 		if (other.GetComponent<CircleAttack> ().GetColorType () == ColorType) {
+			GameObject tempEffect = (GameObject)Instantiate (BrokeEffect, transform.position, Quaternion.identity);
+			Destroy (tempEffect, 1f);
 			Destroy (this.gameObject);
 		}
 	}
